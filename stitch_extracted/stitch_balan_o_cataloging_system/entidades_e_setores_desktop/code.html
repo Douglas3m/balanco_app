@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "outline": "#757682",
+          "primary-fixed": "#dce1ff",
+          "background": "#f9f9ff",
+          "surface-container-high": "#dee8ff",
+          "secondary-container": "#2170e4",
+          "primary-container": "#1e3a8a",
+          "surface-container-low": "#f0f3ff",
+          "on-primary-container": "#90a8ff",
+          "surface-bright": "#f9f9ff",
+          "on-surface-variant": "#444651",
+          "on-tertiary-fixed": "#002113",
+          "inverse-on-surface": "#ecf1ff",
+          "on-primary-fixed-variant": "#264191",
+          "surface": "#f9f9ff",
+          "on-primary-fixed": "#00164e",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#adc6ff",
+          "surface-container-lowest": "#ffffff",
+          "secondary": "#0058be",
+          "on-secondary-container": "#fefcff",
+          "on-tertiary-fixed-variant": "#005236",
+          "surface-dim": "#cfdaf2",
+          "tertiary-container": "#004a31",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-secondary-fixed": "#001a42",
+          "on-tertiary": "#ffffff",
+          "surface-tint": "#4059aa",
+          "primary": "#00236f",
+          "on-surface": "#111c2d",
+          "error": "#ba1a1a",
+          "surface-variant": "#d8e3fb",
+          "inverse-primary": "#b6c4ff",
+          "error-container": "#ffdad6",
+          "on-primary": "#ffffff",
+          "on-background": "#111c2d",
+          "tertiary": "#00311f",
+          "surface-container": "#e7eeff",
+          "on-secondary-fixed-variant": "#004395",
+          "secondary-fixed": "#d8e2ff",
+          "on-error": "#ffffff",
+          "outline-variant": "#c5c5d3",
+          "surface-container-highest": "#d8e3fb",
+          "primary-fixed-dim": "#b6c4ff",
+          "inverse-surface": "#263143",
+          "on-error-container": "#93000a",
+          "tertiary-fixed": "#6ffbbe"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2rem",
+          "gutter-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-xl": ["Outfit"],
+          "headline-xl-mobile": ["Outfit"],
+          "body-lg": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-sm": ["Outfit"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "label-md": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[22px]">balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none">BALANÇO</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">Patrimônio &amp; Auditoria</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Operações de Inventário</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="base-de-catalogacao-e-lancamentos" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Base de Catalogação</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="importar-dados" href="#"><span class="material-symbols-outlined text-[20px]">upload_file</span><span>Importar Dados</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="exportar-dados" href="#"><span class="material-symbols-outlined text-[20px]">file_export</span><span>Exportar Dados</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm" data-path="entidades-e-setores" href="#"><span class="material-symbols-outlined text-[20px]">apartment</span><span>Entidades &amp; Setores</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="relatorios-e-emissao-a4" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Relatórios &amp; Emissão A4</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="configuracoes-de-banco" href="#"><span class="material-symbols-outlined text-[20px]">settings_system_daydream</span><span>Configurações de Banco</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Motor Local</span><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-tertiary font-semibold"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>SQLite 2.4</span></div><div class="flex flex-col gap-0.5"><div class="font-label-md text-label-md text-on-surface font-semibold">Auditoria ACID Ativa</div><div class="font-body-sm text-body-sm text-on-surface-variant">Sincronização local pronta</div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md w-full max-w-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-16 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all shadow-[0_1px_3px_rgba(15,23,42,0.05)]" placeholder="Buscar lote, tombamento, série ou setor... (Ctrl+K)" readonly="" type="text"/><div class="absolute right-2.5 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ctrl K</div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low font-label-md text-label-md text-on-surface"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-medium">SQLite Local: <strong class="font-semibold">Conectado</strong></span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Carlos M.</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Auditor Fiscal Líder</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/ALJJyrACKXRBSktSjXo1WCOkDecY0DjD5uCBMl1TtjAFwDKBEure2omK-rxTBdx1jUa1CPuoscGRa5zcnTl1suntl8QPkCqm0140XI4qzVkhAABsloCte_49_dGcXf0rMLKI2nftn6XMKK4v-miIt-BfqR376fpDZi5Z-DJzYWit6EVio44y-Z89lYgL9QnnM0g-oNmj6XBHxWtkTKkWTUs_qg-E28wLsaciGbpm37Uw2IP3OOpGiS31IAeHcEXc"/></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- Header Institucional & Ações Rápidas -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary-container font-label-md text-label-md mb-1">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+<span>Estrutura Organizacional Hierárquica</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface-variant">Base Local ACID</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Gestão de Entidades &amp; Setores</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-0.5">
+        Cadastre e gerencie a estrutura hierárquica organizacional (órgãos, secretarias, hospitais, salas e departamentos) reutilizáveis em todos os lançamentos patrimoniais.
+      </p>
+</div>
+<!-- Botões de Ação Topo -->
+<div class="flex items-center flex-wrap gap-2">
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[19px] text-secondary">file_download</span>
+<span>Exportar (.csv)</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[19px] text-secondary">file_upload</span>
+<span>Importar</span>
+</button>
+<button class="h-10 px-4 rounded-lg bg-secondary text-on-secondary hover:bg-secondary-container font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-1.5" onclick="document.getElementById('quick-add-form').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Novo Setor</span>
+</button>
+<button class="h-10 px-4 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg text-label-lg shadow-md transition-all flex items-center gap-1.5" onclick="document.getElementById('quick-add-form').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-[18px]">domain_add</span>
+<span>Nova Entidade</span>
+</button>
+</div>
+</div>
+<!-- Abas de Navegação -->
+<div class="flex items-center gap-2 bg-surface-container-low p-1.5 rounded-xl w-fit shadow-sm">
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg shadow-sm flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">corporate_fare</span>
+<span>Entidades &amp; Instituições</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">12</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-lg text-label-lg flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+<span>Setores &amp; Departamentos</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">34</span>
+</button>
+<button class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 font-label-lg text-label-lg flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span>Catálogo Padrão</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">185</span>
+</button>
+</div>
+<!-- Painel de Cadastro Rápido / Inline Form -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md" id="quick-add-form">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_business</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Cadastro Rápido de Entidade / Órgão</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Lançamento de pessoa jurídica pública ou unidade orçamentária autônoma</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm bg-surface-container-low px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>Sincronização imediata no SQLite</span>
+</div>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md pt-2" onsubmit="event.preventDefault(); alert('Entidade gravada com sucesso no motor local SQLite.');">
+<div class="flex flex-col gap-1 lg:col-span-5">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center justify-between">
+<span>Nome da Entidade / Órgão Gestor</span>
+<span class="text-error font-body-sm text-body-sm">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">domain</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" placeholder="Ex: Secretaria Municipal de Obras e Serviços Públicos" required="" type="text" value="Secretaria Municipal de Obras e Serviços Públicos"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 lg:col-span-3">
+<label class="font-label-md text-label-md text-on-surface font-medium">CNPJ / Código Tributário</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">fingerprint</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" placeholder="00.000.000/0000-00" type="text" value="14.283.910/0004-98"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 lg:col-span-4">
+<label class="font-label-md text-label-md text-on-surface font-medium">Regime / Esfera Institucional</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">gavel</span>
+<select class="w-full h-11 pl-10 pr-8 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner">
+<option selected="">Administração Direta</option>
+<option>Administração Indireta - Autarquia</option>
+<option>Fundação Pública Municipal</option>
+<option>Empresa Pública / Mista</option>
+<option>Unidade Gestora Especial (FMS / FUNDEB)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 lg:col-span-5">
+<label class="font-label-md text-label-md text-on-surface font-medium">Responsável pelo Tombamento / Auditor Líder</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">badge</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" placeholder="Nome do auditor e matrícula" type="text" value="Eng. Mariana Lemos • Matrícula 89.214-X"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 lg:col-span-7">
+<label class="font-label-md text-label-md text-on-surface font-medium">Observações Institucionais &amp; Endereço Físico</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-outline">location_on</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" placeholder="Av., Número, Bairro e ramal fiscal de auditoria" type="text" value="Av. das Esplanadas, 1200 - Complexo de Infraestrutura - Ramal 4402"/>
+</div>
+</div>
+<div class="lg:col-span-12 flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+          Entidades cadastradas tornam-se nós-raiz nos relatórios fiscais modelo TCE/TCU.
+        </span>
+<div class="flex items-center gap-2">
+<button class="px-4 h-10 rounded-lg text-on-surface hover:bg-surface-container font-label-lg text-label-lg transition-colors" type="reset">
+            Limpar
+          </button>
+<button class="px-5 h-10 rounded-lg bg-secondary text-on-secondary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-all flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Salvar no SQLite Local</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Visão Geral & Métricas das Entidades (Grid de Cards Analíticos) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Entidades &amp; Órgãos Monitorados</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full font-medium">4 ativas em foco</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Filtro rápido:</span>
+<button class="px-2.5 py-1 rounded-md bg-primary-container text-on-primary font-label-sm text-label-sm">Todas</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm">100% Auditadas</button>
+<button class="px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm">Com Pendências</button>
+</div>
+</div>
+<!-- Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1: Sede Administrativa -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary-container"></div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+              Matriz Ativa
+            </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-tight group-hover:text-secondary transition-colors">
+              Prefeitura Municipal - Sede Administrativa
+            </h3>
+<span class="font-label-sm text-label-sm text-outline tracking-wider font-mono">CNPJ: 14.283.910/0001-44</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-2 rounded-lg text-center mt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">18</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Setores</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">842</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lançam.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary-container leading-tight font-bold">4.120</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unidades</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Tombamento 100% Concluído
+              </span>
+<span class="text-on-surface-variant">4.120 / 4.120</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-3 bg-surface-container-lowest">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Editar Entidade">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 h-8 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="Gerenciar Setores">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>Setores (18)</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Visualizar Ativos">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</button>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-error-container text-on-surface-variant hover:text-error flex items-center justify-center transition-colors" title="Excluir">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Hospital Regional Dr. Silva -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">local_hospital</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Saúde Pública
+            </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-tight group-hover:text-secondary transition-colors">
+              Hospital Regional Dr. Silva
+            </h3>
+<span class="font-label-sm text-label-sm text-outline tracking-wider font-mono">CNPJ: 14.283.910/0002-25</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-2 rounded-lg text-center mt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">09</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Setores</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">415</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lançam.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary-container leading-tight font-bold">3.200</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unidades</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+                Em Andamento (85%)
+              </span>
+<span class="text-on-surface-variant">2.720 / 3.200</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-3 bg-surface-container-lowest">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Editar Entidade">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 h-8 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="Gerenciar Setores">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>Setores (09)</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Visualizar Ativos">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</button>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors" title="Mais opções">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Secretaria de Educação -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-outline-variant"></div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-primary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Sincronizado
+            </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-tight group-hover:text-secondary transition-colors">
+              Secretaria Municipal de Educação
+            </h3>
+<span class="font-label-sm text-label-sm text-outline tracking-wider font-mono">CNPJ: 14.283.910/0003-06</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-2 rounded-lg text-center mt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Setores</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">225</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lançam.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary-container leading-tight font-bold">1.420</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unidades</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+                Inventário Anual
+              </span>
+<span class="text-on-surface-variant">1.420 / 1.420</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-3 bg-surface-container-lowest">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Editar Entidade">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 h-8 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="Gerenciar Setores">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>Setores (14)</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Visualizar Ativos">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</button>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors" title="Mais opções">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Fundação Cultural -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tertiary-fixed-dim"></div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-tertiary flex items-center justify-center shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">museum</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+              Auditado 2024
+            </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary leading-tight group-hover:text-secondary transition-colors">
+              Fundação Cultural e Patrimônio
+            </h3>
+<span class="font-label-sm text-label-sm text-outline tracking-wider font-mono">CNPJ: 14.283.910/0005-72</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-2 rounded-lg text-center mt-1">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Setores</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">88</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lançam.</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-secondary-container leading-tight font-bold">310</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unidades</span>
+</div>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                Termo Emitido
+              </span>
+<span class="text-on-surface-variant">310 / 310</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 mt-3 bg-surface-container-lowest">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Editar Entidade">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="px-2.5 h-8 rounded-lg bg-secondary/10 hover:bg-secondary/20 text-secondary font-label-sm text-label-sm flex items-center gap-1 transition-colors" title="Gerenciar Setores">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>Setores (04)</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center transition-colors" title="Visualizar Ativos">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</button>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors" title="Mais opções">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Painel Inferior: Tabela Detalhada de Setores da Entidade Selecionada -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Header da Seção de Setores -->
+<div class="p-space-lg bg-surface-container-low/50 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Setores Vinculados: Prefeitura Municipal (Sede)</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">18 cadastrados</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hierarquia espacial para alocação direta de plaquetas, QR Codes e termos de responsabilidade.</p>
+</div>
+</div>
+<!-- Barra de Filtros e Busca da Tabela -->
+<div class="flex items-center gap-2 flex-wrap">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-outline">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none shadow-sm" placeholder="Filtrar sala ou código..." type="text"/>
+</div>
+<select class="h-9 px-3 rounded-lg bg-surface-container-lowest text-label-md font-label-md text-on-surface focus:outline-none shadow-sm">
+<option>Todos os Blocos / Andares</option>
+<option>Prédio Central</option>
+<option>Anexo Administrativo</option>
+<option>Almoxarifado Geral</option>
+</select>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md flex items-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">add_location_alt</span>
+<span>Adicionar Sala</span>
+</button>
+</div>
+</div>
+<!-- Tabela de Setores -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low font-label-sm text-label-sm uppercase tracking-wider text-outline">
+<th class="py-3 px-space-md w-12 text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</th>
+<th class="py-3 px-space-md">Nome do Setor / Sala</th>
+<th class="py-3 px-space-md">Andar / Bloco</th>
+<th class="py-3 px-space-md text-right">Bens Tombados</th>
+<th class="py-3 px-space-md">Responsável Local</th>
+<th class="py-3 px-space-md">Último Inventário</th>
+<th class="py-3 px-space-md">Conferência</th>
+<th class="py-3 px-space-md text-center">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-md font-body-md text-on-surface">
+<!-- Row 1: Gabinete -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">chair</span>
+<span>Gabinete 02 - Prefeito &amp; Despachos</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-label-md text-label-md">
+              3º Andar • Bloco A
+            </td>
+<td class="py-3.5 px-space-md text-right font-headline-sm text-headline-sm text-on-surface">
+              142
+            </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Dr. Geraldo Fontes</span>
+<span class="font-label-sm text-label-sm text-outline">Chefe de Gabinete</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-mono text-body-sm">
+              14/10/2024
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                Auditado 100%
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Setor">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Transferir Bens em Lote">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Excluir Setor">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: TI / Suporte -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">devices</span>
+<span>TI / Suporte Técnico &amp; Servidores</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-label-md text-label-md">
+              Subsolo • Ala Leste
+            </td>
+<td class="py-3.5 px-space-md text-right font-headline-sm text-headline-sm text-on-surface">
+              318
+            </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Lucas S. Ferreira</span>
+<span class="font-label-sm text-label-sm text-outline">Coordenador de Redes</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-mono text-body-sm">
+              22/10/2024
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                Auditado 100%
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Setor">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Transferir Bens em Lote">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Excluir Setor">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Sala de Reuniões Principal -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">groups</span>
+<span>Sala de Reuniões Nobre &amp; Videoconferência</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-label-md text-label-md">
+              2º Andar • Bloco A
+            </td>
+<td class="py-3.5 px-space-md text-right font-headline-sm text-headline-sm text-on-surface">
+              64
+            </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Carla Mendonça</span>
+<span class="font-label-sm text-label-sm text-outline">Secretária Executiva</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-mono text-body-sm">
+              05/09/2024
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                Em Revisão
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Setor">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Transferir Bens em Lote">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Excluir Setor">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Almoxarifado Central -->
+<tr class="hover:bg-surface-container-low/70 transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">warehouse</span>
+<span>Almoxarifado Central • Triagem de Entradas</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-label-md text-label-md">
+              Térreo • Galpão Externo 01
+            </td>
+<td class="py-3.5 px-space-md text-right font-headline-sm text-headline-sm text-on-surface">
+              2.104
+            </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Roberto Antunes</span>
+<span class="font-label-sm text-label-sm text-outline">Gestor de Suprimentos</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-mono text-body-sm">
+              28/10/2024
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                Auditado 100%
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Setor">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Transferir Bens em Lote">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Excluir Setor">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Arquivo Geral -->
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-3.5 px-space-md text-center">
+<input class="w-4 h-4 rounded text-primary-container focus:ring-0" type="checkbox"/>
+</td>
+<td class="py-3.5 px-space-md font-semibold text-primary">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">inventory</span>
+<span>Arquivo Geral &amp; Acervo Histórico Permanente</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-label-md text-label-md">
+              Subsolo • Anexo B
+            </td>
+<td class="py-3.5 px-space-md text-right font-headline-sm text-headline-sm text-on-surface">
+              892
+            </td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-on-surface">Beatriz Silveira</span>
+<span class="font-label-sm text-label-sm text-outline">Arquivista Geral</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-mono text-body-sm">
+              11/08/2024
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                Inventário Vencido
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-center">
+<div class="inline-flex items-center gap-1">
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Editar Setor">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-on-surface-variant hover:text-secondary transition-colors" title="Transferir Bens em Lote">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Excluir Setor">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Paginação e Resumo da Tabela -->
+<div class="py-3 px-space-md bg-surface-container-low/30 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span>Exibindo <strong>5</strong> de <strong>18</strong> setores da Sede Administrativa</span>
+<span class="text-outline">|</span>
+<button class="text-secondary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Imprimir Folha de Rosto do Setor (A4)</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface disabled:opacity-50 flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 rounded-lg bg-primary-container text-on-primary font-semibold">1</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container flex items-center justify-center shadow-sm transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container flex items-center justify-center shadow-sm transition-colors">3</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

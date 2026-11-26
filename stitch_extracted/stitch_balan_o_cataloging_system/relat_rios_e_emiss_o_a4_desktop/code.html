@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "outline": "#757682",
+          "primary-fixed": "#dce1ff",
+          "background": "#f9f9ff",
+          "surface-container-high": "#dee8ff",
+          "secondary-container": "#2170e4",
+          "primary-container": "#1e3a8a",
+          "surface-container-low": "#f0f3ff",
+          "on-primary-container": "#90a8ff",
+          "surface-bright": "#f9f9ff",
+          "on-surface-variant": "#444651",
+          "on-tertiary-fixed": "#002113",
+          "inverse-on-surface": "#ecf1ff",
+          "on-primary-fixed-variant": "#264191",
+          "surface": "#f9f9ff",
+          "on-primary-fixed": "#00164e",
+          "on-secondary": "#ffffff",
+          "secondary-fixed-dim": "#adc6ff",
+          "surface-container-lowest": "#ffffff",
+          "secondary": "#0058be",
+          "on-secondary-container": "#fefcff",
+          "on-tertiary-fixed-variant": "#005236",
+          "surface-dim": "#cfdaf2",
+          "tertiary-container": "#004a31",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-secondary-fixed": "#001a42",
+          "on-tertiary": "#ffffff",
+          "surface-tint": "#4059aa",
+          "primary": "#00236f",
+          "on-surface": "#111c2d",
+          "error": "#ba1a1a",
+          "surface-variant": "#d8e3fb",
+          "inverse-primary": "#b6c4ff",
+          "error-container": "#ffdad6",
+          "on-primary": "#ffffff",
+          "on-background": "#111c2d",
+          "tertiary": "#00311f",
+          "surface-container": "#e7eeff",
+          "on-secondary-fixed-variant": "#004395",
+          "secondary-fixed": "#d8e2ff",
+          "on-error": "#ffffff",
+          "outline-variant": "#c5c5d3",
+          "surface-container-highest": "#d8e3fb",
+          "primary-fixed-dim": "#b6c4ff",
+          "inverse-surface": "#263143",
+          "on-error-container": "#93000a",
+          "tertiary-fixed": "#6ffbbe"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-xl": "2rem",
+          "gutter-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-xl": ["Outfit"],
+          "headline-xl-mobile": ["Outfit"],
+          "body-lg": ["Inter"],
+          "label-lg": ["Inter"],
+          "body-sm": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-sm": ["Outfit"],
+          "headline-md": ["Outfit"],
+          "headline-lg-mobile": ["Outfit"],
+          "label-md": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg": ["Outfit"]
+        },
+        "fontSize": {
+          "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[22px]">balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-primary leading-none">BALANÇO</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">Patrimônio &amp; Auditoria</span></div></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs mb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Operações de Inventário</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="base-de-catalogacao-e-lancamentos" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Base de Catalogação</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="importar-dados" href="#"><span class="material-symbols-outlined text-[20px]">upload_file</span><span>Importar Dados</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="exportar-dados" href="#"><span class="material-symbols-outlined text-[20px]">file_export</span><span>Exportar Dados</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="entidades-e-setores" href="#"><span class="material-symbols-outlined text-[20px]">apartment</span><span>Entidades &amp; Setores</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="relatorios-e-emissao-a4" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span>Relatórios &amp; Emissão A4</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="configuracoes-de-banco" href="#"><span class="material-symbols-outlined text-[20px]">settings_system_daydream</span><span>Configurações de Banco</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Motor Local</span><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm text-tertiary font-semibold"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>SQLite 2.4</span></div><div class="flex flex-col gap-0.5"><div class="font-label-md text-label-md text-on-surface font-semibold">Auditoria ACID Ativa</div><div class="font-body-sm text-body-sm text-on-surface-variant">Sincronização local pronta</div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md w-full max-w-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-16 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all shadow-[0_1px_3px_rgba(15,23,42,0.05)]" placeholder="Buscar lote, tombamento, série ou setor... (Ctrl+K)" readonly="" type="text"/><div class="absolute right-2.5 flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Ctrl K</div></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low font-label-md text-label-md text-on-surface"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span class="font-medium">SQLite Local: <strong class="font-semibold">Conectado</strong></span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Carlos M.</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Auditor Fiscal Líder</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-surface-container-high" src="https://lh3.googleusercontent.com/aida/ALJJyrACKXRBSktSjXo1WCOkDecY0DjD5uCBMl1TtjAFwDKBEure2omK-rxTBdx1jUa1CPuoscGRa5zcnTl1suntl8QPkCqm0140XI4qzVkhAABsloCte_49_dGcXf0rMLKI2nftn6XMKK4v-miIt-BfqR376fpDZi5Z-DJzYWit6EVio44y-Z89lYgL9QnnM0g-oNmj6XBHxWtkTKkWTUs_qg-E28wLsaciGbpm37Uw2IP3OOpGiS31IAeHcEXc"/></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Top Command & Filter Deck -->
+<section class="mb-space-lg">
+<!-- Header Row -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-outline font-label-sm">
+<span>PATRIMÔNIO &amp; AUDITORIA</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">EMISSÃO &amp; LAUDOS FÍSICOS</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Emissão &amp; Impressão de Relatório A4</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+            Norma NBR 14653 / ACID Ready
+          </span>
+</div>
+</div>
+<!-- Action Buttons Bar -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="inline-flex items-center gap-2 px-space-md h-10 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm font-label-lg transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">tune</span>
+<span>Configurar Página</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md h-10 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm font-label-lg transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px] text-error">picture_as_pdf</span>
+<span>Exportar em PDF</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg h-10 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-lg shadow-sm transition-all active:scale-[0.98]" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span>Imprimir Laudo A4</span>
+</button>
+</div>
+</div>
+<!-- Parameter Filters Shelf -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Filter 1: Entidade -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Entidade Cadastrada</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container appearance-none cursor-pointer">
+<option selected="">Prefeitura Municipal - Sede Principal</option>
+<option>Fundo Municipal de Saúde</option>
+<option>Secretaria de Obras &amp; Serviços Urbanos</option>
+<option>Câmara Municipal de Vereadores</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Filter 2: Setor -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Setor Operacional</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container appearance-none cursor-pointer">
+<option selected="">Todos os Setores (Consolidado Geral)</option>
+<option>Depto. de TI &amp; Infraestrutura</option>
+<option>Gabinete Executivo</option>
+<option>Arquivo Geral &amp; Patrimônio</option>
+<option>Recursos Humanos</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Filter 3: Exercício -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Exercício / Competência</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container appearance-none cursor-pointer">
+<option selected="">Exercício 2025 - Outubro</option>
+<option>Exercício 2025 - 3º Trimestre</option>
+<option>Exercício 2025 - Consolidado Semestral</option>
+<option>Exercício 2024 - Fechamento Anual</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">calendar_month</span>
+</div>
+</div>
+<!-- Filter 4: Ordenação -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Critério de Ordenação</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container appearance-none cursor-pointer">
+<option selected="">Por Plaqueta (Ordem Crescente)</option>
+<option>Por Plaqueta (Ordem Decrescente)</option>
+<option>Por Descrição Alfabética</option>
+<option>Por Setor Responsável</option>
+<option>Por Estado de Conservação</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">swap_vert</span>
+</div>
+</div>
+</div>
+<!-- Layout Specs Bar -->
+<div class="mt-space-md pt-space-sm flex flex-wrap items-center justify-between gap-space-sm text-body-sm text-on-surface-variant bg-surface-container-low px-space-md py-2 rounded-lg">
+<div class="flex items-center gap-space-md flex-wrap">
+<span class="flex items-center gap-1.5 font-label-md text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">aspect_ratio</span>
+            Formato: <strong>A4 Retrato (210×297mm)</strong>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-outline">margin</span>
+            Margens Auditáveis: <strong>15mm Simétricas</strong>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">crop_original</span>
+            Fotografia: <strong>Aspecto 1:1 Preservado</strong>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">table_rows</span>
+            Linhas: <strong>Zebradas de Alta Legibilidade</strong>
+</span>
+</div>
+<div class="inline-flex items-center gap-1.5 font-label-sm text-secondary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+          Layout Validado para Tribunal de Contas
+        </div>
+</div>
+</div>
+</section>
+<!-- Workspace Canvas & Side Controls Layout -->
+<div class="grid grid-cols-1 2xl:grid-cols-12 gap-space-lg items-start">
+<!-- Central Stage: Realistic Auditor Workdesk with A4 Sheet -->
+<div class="2xl:col-span-9 flex flex-col items-center">
+<!-- Desk Toolbar -->
+<div class="w-full flex items-center justify-between bg-surface-container-low px-space-md py-2 rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-md text-on-surface font-semibold">Pré-Visualização Realista de Impressão</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-on-surface-variant">Escala 100% (A4 Real)</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Zoom Menos">
+<span class="material-symbols-outlined text-[18px]">zoom_out</span>
+</button>
+<span class="font-label-sm text-on-surface px-1.5">100%</span>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Zoom Mais">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest" title="Ajustar à Tela">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+</div>
+</div>
+<!-- Auditor Table Felt / Shadow Field -->
+<div class="w-full bg-surface-dim/40 p-space-md sm:p-space-xl rounded-b-xl flex justify-center overflow-x-auto shadow-inner">
+<!-- THE A4 PAPER SHEET (True 210mm x 297mm Proportion Sheet) -->
+<article class="bg-surface-container-lowest text-on-surface w-[820px] min-w-[780px] shadow-2xl rounded-sm p-[15mm] flex flex-col justify-between transition-all select-none">
+<!-- SHEET TOP SECTION -->
+<div>
+<!-- Header Grid -->
+<div class="flex items-start justify-between pb-3 bg-surface-container-lowest">
+<!-- System Brand & Slogan -->
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[28px]">balance</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md tracking-tight text-primary leading-none">BALANÇO</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Patrimônio &amp; Inventário Físico</span>
+</div>
+</div>
+<!-- Official Entity Header & Metadata -->
+<div class="flex flex-col text-right font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<span class="font-label-md text-label-md text-on-surface font-bold">Prefeitura Municipal - Gabinete Executivo</span>
+<span>CNPJ: <strong>14.283.910/0001-44</strong></span>
+<span>Data de Emissão: <strong>24/10/2025 às 14:32</strong></span>
+</div>
+</div>
+<!-- Visual Separation Band -->
+<div class="h-1 bg-primary-container rounded-full my-2.5"></div>
+<!-- Report Official Title -->
+<div class="text-center py-2">
+<h2 class="font-headline-sm text-headline-sm text-primary tracking-normal uppercase">
+                RELATÓRIO AUDITADO DE CATALOGAÇÃO E TOMBAMENTO PATRIMONIAL
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Inventário Físico Contínuo — Bens Móveis e Equipamentos — Exercício 2025
+              </p>
+</div>
+<!-- AUDIT TABLE (STRICT MILLIMETRIC METRIC LAYOUT) -->
+<div class="mt-3 overflow-hidden rounded-lg shadow-sm">
+<table class="w-full border-collapse text-left">
+<!-- Table Header with Corporate Deep Blue -->
+<thead>
+<tr class="bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-2 text-center w-16" scope="col">Foto</th>
+<th class="py-2.5 px-2 w-28" scope="col">Plaqueta</th>
+<th class="py-2.5 px-2.5" scope="col">Produto / Especificação</th>
+<th class="py-2.5 px-2 w-28" scope="col">Setor</th>
+<th class="py-2.5 px-2 w-28" scope="col">Entidade</th>
+<th class="py-2.5 px-2 text-center w-16" scope="col">Qtd.</th>
+<th class="py-2.5 px-2 text-right w-28" scope="col">Conservação / Data</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y-0">
+<!-- Row 1: Notebook ThinkPad -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-2 text-center align-middle">
+<div class="w-12 h-12 rounded bg-surface-container-low mx-auto overflow-hidden p-0.5 shadow-sm">
+<img alt="ThinkPad L14" class="w-full h-full object-cover rounded" data-alt="Professional studio photo of a Lenovo ThinkPad L14 Gen 4 business laptop on a clean white desk, neutral corporate lighting, crisp details, high resolution asset photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAsxx3JQCwgOZsJTVwPiON94fovx1ri7yv4HP0PsDU8fZYkDk_k0FAucBW2kYax5htEiLtapkEbVD3y0miVLR_6hntt1h8waDG3bVIysFZrCSZJH5FHZv3Q0T3XzcAj9qayTO18qVodHTbu5RVjVc1RsVV1eFIlpWHT7bx32AeCN6zIFCChmc1L0nhA_1skGaQvAubiGPdx-dh8Z2Dlo8NpAwhcTs04c069BRy5OiF"/>
+</div>
+</td>
+<td class="py-2 px-2 font-mono font-semibold text-primary align-middle">
+                      PAT-2025-0012
+                    </td>
+<td class="py-2 px-2.5 align-middle">
+<div class="font-label-md text-on-surface font-semibold">Notebook Lenovo ThinkPad L14 Gen 4</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Intel Core i7 13th, 32GB RAM DDR5, 1TB NVMe, Tela 14 FHD IPS</div>
+</td>
+<td class="py-2 px-2 text-on-surface-variant font-medium align-middle">Depto. de TI</td>
+<td class="py-2 px-2 text-on-surface-variant align-middle">Pref. Municipal</td>
+<td class="py-2 px-2 text-center font-bold text-on-surface align-middle">15 un</td>
+<td class="py-2 px-2 text-right align-middle">
+<span class="inline-flex items-center gap-1 font-label-sm text-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Ótimo
+                      </span>
+<div class="text-[10px] text-outline">24/10/2025</div>
+</td>
+</tr>
+<!-- Row 2: Cadeira Giratória (Zebra) -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-2 text-center align-middle">
+<div class="w-12 h-12 rounded bg-surface-container-low mx-auto overflow-hidden p-0.5 shadow-sm">
+<img alt="Cadeira NR-17" class="w-full h-full object-cover rounded" data-alt="Modern ergonomic executive black mesh office chair NR-17 standard with adjustable 3D armrests isolated on bright neutral backdrop, clean product angle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT67EOwNwCu68CtZe86jWrZ96flc8WxP_D0H4GcV_HuSpvkBMhxWsYlE1Jcdin3_upF1hbITLkuk2cFsj7GFh2-ISqX2xQ9U740w9ynWPt4dyZt4ELjjO2mcvMUYUcoDnG4wIx2Cqaf1vfRPiUNXMpCwRvOh2H6ukqyv3K9NhsqaIop66P8AFMmTAQAjueabbaFAWy4t0UN860uubWOzCNPUUuuST1Nv1eAoAl_mpM"/>
+</div>
+</td>
+<td class="py-2 px-2 font-mono font-semibold text-primary align-middle">
+                      PAT-2025-0044
+                    </td>
+<td class="py-2 px-2.5 align-middle">
+<div class="font-label-md text-on-surface font-semibold">Cadeira Giratória Executiva NR-17</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Tela Mesh respirável preta, apoio lombar ajustável, rodízios PU</div>
+</td>
+<td class="py-2 px-2 text-on-surface-variant font-medium align-middle">Gabinete 02</td>
+<td class="py-2 px-2 text-on-surface-variant align-middle">Pref. Municipal</td>
+<td class="py-2 px-2 text-center font-bold text-on-surface align-middle">24 un</td>
+<td class="py-2 px-2 text-right align-middle">
+<span class="inline-flex items-center gap-1 font-label-sm text-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Ótimo
+                      </span>
+<div class="text-[10px] text-outline">24/10/2025</div>
+</td>
+</tr>
+<!-- Row 3: Projetor Laser Epson -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-2 text-center align-middle">
+<div class="w-12 h-12 rounded bg-surface-container-low mx-auto overflow-hidden p-0.5 shadow-sm">
+<img alt="Projetor Epson" class="w-full h-full object-cover rounded" data-alt="Epson PowerLite high-performance laser projector white sleek casing seated on minimalist boardroom mounting, commercial asset capture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChFxE2IQDtPOqz1MbgDQBvVTp8V6br30tu0-cXzTcixeD7xBrOHMdBrjMAibcF93Z31x1fH_xDYEwBEIGVWhORdv9_Dz05WDxdfupqIvLVIoU0QWn7XfKP-pL5bLv5FQNL-Dvufa67NRfXKymStzr2k4K--AkzM60YoUW3n_RwB3XdljKfwThxTbaS-NXP41rLtIDT6U8C5zYZ8DjAvl8ljNTxHaoFqUfAV7HHftPa"/>
+</div>
+</td>
+<td class="py-2 px-2 font-mono font-semibold text-primary align-middle">
+                      PAT-2025-0089
+                    </td>
+<td class="py-2 px-2.5 align-middle">
+<div class="font-label-md text-on-surface font-semibold">Projetor Laser 4000 Lumens WUXGA</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Epson PowerLite L200W, contraste 2.500.000:1, HDMI x2, RJ45</div>
+</td>
+<td class="py-2 px-2 text-on-surface-variant font-medium align-middle">Sala Reuniões</td>
+<td class="py-2 px-2 text-on-surface-variant align-middle">Pref. Municipal</td>
+<td class="py-2 px-2 text-center font-bold text-on-surface align-middle">02 un</td>
+<td class="py-2 px-2 text-right align-middle">
+<span class="inline-flex items-center gap-1 font-label-sm text-secondary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Bom
+                      </span>
+<div class="text-[10px] text-outline">24/10/2025</div>
+</td>
+</tr>
+<!-- Row 4: Arquivo de Aço (Zebra) -->
+<tr class="bg-surface-container-low/70 hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-2 text-center align-middle">
+<div class="w-12 h-12 rounded bg-surface-container-low mx-auto overflow-hidden p-0.5 shadow-sm">
+<img alt="Arquivo de Aço" class="w-full h-full object-cover rounded" data-alt="Heavy duty 4-drawer industrial grey steel filing cabinet with chrome lock cylinder in an organized municipal administrative office archive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC73Ysz3KtC6gUTCqNseWyCkhQDibEHVYw1HRURKEnwrfHjFeI8Fg1PGKBC74fVTVr96qaSmp1ahmoG3TeLXy1efn5A4LkwK_LKYQgaYCwdB0DZBgQFgrBa7UUzOo1mzzGRDm5NAUvW9YBquG9dKwLBAqNc77rnL5nBVRs6MmQmFARgtLwvI_L6yC-bv6KznyD9OLax6EkxlK0On1RfxBHARbQOYwCAfip0xVpISDFr"/>
+</div>
+</td>
+<td class="py-2 px-2 font-mono font-semibold text-primary align-middle">
+                      PAT-2025-0112
+                    </td>
+<td class="py-2 px-2.5 align-middle">
+<div class="font-label-md text-on-surface font-semibold">Arquivo de Aço Reforçado 4 Gavetas</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Chapa 24 tratada antiferrugem, corrediças telescópicas, chave Yale</div>
+</td>
+<td class="py-2 px-2 text-on-surface-variant font-medium align-middle">Arquivo Geral</td>
+<td class="py-2 px-2 text-on-surface-variant align-middle">Pref. Municipal</td>
+<td class="py-2 px-2 text-center font-bold text-on-surface align-middle">08 un</td>
+<td class="py-2 px-2 text-right align-middle">
+<span class="inline-flex items-center gap-1 font-label-sm text-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Ótimo
+                      </span>
+<div class="text-[10px] text-outline">24/10/2025</div>
+</td>
+</tr>
+<!-- Row 5: Mesa em L Carvalho -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-2 text-center align-middle">
+<div class="w-12 h-12 rounded bg-surface-container-low mx-auto overflow-hidden p-0.5 shadow-sm">
+<img alt="Mesa Diretoria" class="w-full h-full object-cover rounded" data-alt="Executive L-shaped office corner desk in Munich oak wood texture with dark metal modesty panel, corporate professional furniture photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKlU8WXtSjghLepOP4bvmD2Hq1oVpvLTWJUZYM6R-9u1aAAqplRR2XdegVpbqlxBY3cJcbKkFKX8nXJmYepTiun0zcHzCn7YpIBDpT_Z2aCDs-8PcSWrzPTgAwXUDSvPQGzO3x9a64vTBWTp8a3va6hPeWW63yPZyuWPn7U1lUDh59_LjilpYu-sLuFeApC8KRvO7R9eCBVz7cQ6SVL7KYz1v_A-7Lz7nJuGQ05Xjk"/>
+</div>
+</td>
+<td class="py-2 px-2 font-mono font-semibold text-primary align-middle">
+                      PAT-2025-0145
+                    </td>
+<td class="py-2 px-2.5 align-middle">
+<div class="font-label-md text-on-surface font-semibold">Mesa Diretoria em L 180x160cm</div>
+<div class="text-[11px] text-on-surface-variant leading-tight">Tampo MDF 25mm Carvalho Munique, passa-fios e calha elétrica embutida</div>
+</td>
+<td class="py-2 px-2 text-on-surface-variant font-medium align-middle">Recursos Humanos</td>
+<td class="py-2 px-2 text-on-surface-variant align-middle">Pref. Municipal</td>
+<td class="py-2 px-2 text-center font-bold text-on-surface align-middle">06 un</td>
+<td class="py-2 px-2 text-right align-middle">
+<span class="inline-flex items-center gap-1 font-label-sm text-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Ótimo
+                      </span>
+<div class="text-[10px] text-outline">24/10/2025</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Page Notice -->
+<div class="mt-3 flex items-center justify-between px-2 text-[11px] text-outline">
+<span>* Continua na página subsequente com listagem de itens de TI e Telecomunicações.</span>
+<span class="font-mono">HASH: 4b98fa32-ca01-499b</span>
+</div>
+</div>
+<!-- SHEET FOOTER SECTION (AUDITABLE SECURITY BARRIER) -->
+<div class="mt-8 pt-3 bg-surface-container-lowest">
+<!-- Security Line with High Contrast Total Bar -->
+<div class="h-0.5 bg-surface-container-highest w-full mb-3"></div>
+<div class="p-3 bg-surface-container-low rounded-lg flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">analytics</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">
+                  Total de Itens Catalogados: <span class="text-primary font-mono text-[15px]">142</span>
+<span class="text-outline mx-1.5">|</span>
+                  Volume Físico Somado: <span class="text-primary font-mono text-[15px]">8.740 unidades</span>
+</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-lowest text-tertiary font-label-sm font-semibold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                Balanço Homologado Sem Divergência
+              </div>
+</div>
+<!-- Tripartite Signatures & Legal Stamps -->
+<div class="grid grid-cols-3 gap-space-md pt-5 pb-2 text-center">
+<div class="flex flex-col items-center">
+<div class="w-44 h-8 flex items-center justify-center">
+<span class="font-serif italic text-outline text-[13px] tracking-widest select-none">Carlos M. Assinado</span>
+</div>
+<div class="w-full h-px bg-on-surface-variant/40 mb-1"></div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Carlos M. Auditor Fiscal</span>
+<span class="text-[10px] text-outline">Matrícula #8942 - Fiscalização</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-44 h-8 flex items-center justify-center">
+<span class="font-serif italic text-outline text-[13px] tracking-widest select-none">Beatriz R. Visto</span>
+</div>
+<div class="w-full h-px bg-on-surface-variant/40 mb-1"></div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Coordenação de Patrimônio</span>
+<span class="text-[10px] text-outline">Portaria Municipal 204/2023</span>
+</div>
+<div class="flex flex-col items-center justify-end">
+<div class="p-1 rounded bg-surface-container-lowest shadow-sm flex items-center gap-1 mb-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">qr_code_2</span>
+<span class="font-mono text-[10px] font-bold text-on-surface">BLC-2025-98F4-ACID</span>
+</div>
+<span class="font-label-sm text-[10px] text-outline">Validação Digital Garantida</span>
+</div>
+</div>
+<!-- Page Number & System Stamp -->
+<div class="flex items-center justify-between text-[11px] text-outline pt-2">
+<span>Emitido via BALANÇO Desktop Offline Suite — Engine SQLite 2.4 ACID</span>
+<span class="font-bold text-on-surface font-label-md">Página 1 de 12</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Rail: Print Dispatch & Output Parameters -->
+<div class="2xl:col-span-3 flex flex-col gap-space-md">
+<!-- Print Dispatch Card -->
+<div class="p-space-lg bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">print</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Propriedades</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm font-semibold">Pronto</span>
+</div>
+<!-- Destination Selector -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Destino de Impressão</label>
+<div class="relative">
+<select class="w-full h-11 pl-10 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container appearance-none cursor-pointer">
+<option selected="">HP LaserJet Pro P1102w (Padrão)</option>
+<option>Salvar como PDF da Microsoft</option>
+<option>Impressora Fiscal EPSON TM-T20X</option>
+<option>Canon iR-ADV C3525 III PCL6</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">print</span>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Copies & Pages -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Cópias</label>
+<div class="relative flex items-center">
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container font-mono" max="99" min="1" type="number" value="1"/>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Orientação</label>
+<div class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">portrait</span>
+<span>Retrato</span>
+</div>
+</div>
+</div>
+<!-- Pages Range -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-outline uppercase tracking-wider">Intervalo de Páginas</label>
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center gap-2 text-body-md text-on-surface cursor-pointer">
+<input checked="" class="w-4 h-4 text-primary-container accent-primary" name="page-range" type="radio"/>
+<span>Todas as páginas (1 a 12)</span>
+</label>
+<label class="flex items-center gap-2 text-body-md text-on-surface cursor-pointer">
+<input class="w-4 h-4 text-primary-container accent-primary" name="page-range" type="radio"/>
+<span>Apenas página atual (1)</span>
+</label>
+<label class="flex items-center gap-2 text-body-md text-on-surface cursor-pointer">
+<input class="w-4 h-4 text-primary-container accent-primary" name="page-range" type="radio"/>
+<span>Personalizado:</span>
+<input class="h-7 w-32 px-2 text-body-sm rounded bg-surface-container-low text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary-container" placeholder="Ex: 1-4, 7, 10" type="text"/>
+</label>
+</div>
+</div>
+<div class="h-px bg-surface-container my-1"></div>
+<!-- Audit Toggles -->
+<div class="flex flex-col gap-2.5">
+<label class="flex items-center gap-2.5 cursor-pointer text-body-sm text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary-container accent-primary" type="checkbox"/>
+<span>Repetir cabeçalho em todas as páginas</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer text-body-sm text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary-container accent-primary" type="checkbox"/>
+<span>Imprimir carimbo de autenticação digital</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer text-body-sm text-on-surface">
+<input checked="" class="w-4 h-4 rounded text-primary-container accent-primary" type="checkbox"/>
+<span>Preservar proporção 1:1 das fotografias</span>
+</label>
+<label class="flex items-center gap-2.5 cursor-pointer text-body-sm text-on-surface">
+<input class="w-4 h-4 rounded text-primary-container accent-primary" type="checkbox"/>
+<span>Modo econômico (Tons de Cinza / P&amp;B)</span>
+</label>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full h-12 mt-2 rounded-xl bg-primary-container text-on-primary hover:bg-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.99]" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[24px]">print</span>
+<span>Imprimir Agora</span>
+</button>
+</div>
+<!-- Quick Document Info Card -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-primary font-label-md">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="font-semibold">Auditoria de Emissão</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant space-y-1">
+<p>• Impressão rastreada com carimbo temporal SQLite ACID.</p>
+<p>• O código de barra do rodapé permite averiguação rápida por leitor ótico em campo.</p>
+<p>• Em conformidade com a Instrução Normativa da SEST/TCU.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Interactive feedback for document preview controls
+    const printButtons = document.querySelectorAll('[onclick="window.print()"]');
+    printButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Subtle micro-feedback ripple can be triggered here
+        console.info('Disparando pipeline de impressão do laudo A4...');
+      });
+    });
+  })();
+</script></main></div></body></html>

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+*.lock
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS / Temp
+Thumbs.db
+[Dd]esktop.ini
+*.tmp
+temp_*.json
+test_*.json
+test_*.pdf
+test_*.csv
+test_*.zip
+test_*.db

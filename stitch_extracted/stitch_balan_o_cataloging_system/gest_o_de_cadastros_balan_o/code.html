@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#004a31", "on-primary-fixed-variant": "#264191", "surface-container": "#e7eeff", "tertiary-fixed-dim": "#4edea3", "surface-bright": "#f9f9ff", "surface-dim": "#cfdaf2", "on-secondary": "#ffffff", "surface-container-high": "#dee8ff", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "primary-fixed": "#dce1ff", "surface": "#f9f9ff", "error": "#ba1a1a", "on-error-container": "#93000a", "primary": "#00236f", "secondary": "#0058be", "secondary-container": "#2170e4", "outline": "#757682", "on-surface": "#111c2d", "on-tertiary": "#ffffff", "tertiary-fixed": "#6ffbbe", "on-secondary-container": "#fefcff", "inverse-on-surface": "#ecf1ff", "secondary-fixed": "#d8e2ff", "primary-container": "#1e3a8a", "surface-container-highest": "#d8e3fb", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#004395", "surface-tint": "#4059aa", "error-container": "#ffdad6", "on-tertiary-fixed": "#002113", "surface-variant": "#d8e3fb", "on-primary-fixed": "#00164e", "outline-variant": "#c5c5d3", "on-secondary-fixed": "#001a42", "surface-container-low": "#f0f3ff", "inverse-primary": "#b6c4ff", "tertiary": "#00311f", "on-tertiary-fixed-variant": "#005236", "background": "#f9f9ff", "on-background": "#111c2d", "on-primary-container": "#90a8ff", "on-surface-variant": "#444651", "secondary-fixed-dim": "#adc6ff", "on-tertiary-container": "#27c38a", "primary-fixed-dim": "#b6c4ff", "inverse-surface": "#263143" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "2rem", "gutter": "1.5rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "1rem" }, "fontFamily": { "body-sm": ["Inter"], "headline-lg-mobile": ["Outfit"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Outfit"], "headline-xl": ["Outfit"], "headline-lg": ["Outfit"], "label-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-xl-mobile": ["Outfit"], "headline-md": ["Outfit"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Balanço</span><div class="flex items-center gap-1.5 mt-0.5"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">SQLite Local • Online</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Sincronização pendente" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container-low text-secondary active:scale-95 transition-transform" type="button"><span class="material-symbols-outlined text-[20px]">sync</span></button><a class="w-11 h-11 flex items-center justify-center" data-path="perfil-e-configuracoes" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed" src="https://lh3.googleusercontent.com/aida/ALJJyrACKXRBSktSjXo1WCOkDecY0DjD5uCBMl1TtjAFwDKBEure2omK-rxTBdx1jUa1CPuoscGRa5zcnTl1suntl8QPkCqm0140XI4qzVkhAABsloCte_49_dGcXf0rMLKI2nftn6XMKK4v-miIt-BfqR376fpDZi5Z-DJzYWit6EVio44y-Z89lYgL9QnnM0g-oNmj6XBHxWtkTKkWTUs_qg-E28wLsaciGbpm37Uw2IP3OOpGiS31IAeHcEXc"/></a></div></div></header><main class="flex-1 w-full bg-surface pt-16 pb-28"><div class="flex flex-col w-full px-gutter-mobile space-y-space-md pb-6">
+<!-- Sub-topo / Contexto Operacional -->
+<div class="flex flex-col pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Cadastros Básicos</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Gerencie entidades, setores e produtos reutilizáveis nos lançamentos</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">database</span>
+</div>
+</div>
+</div>
+<!-- Abas Segmentadas Fluidas -->
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center justify-between gap-1 shadow-sm">
+<button class="flex-1 py-2 px-1 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1 transition-all" id="tab-entidades" type="button">
+<span class="truncate">Entidades</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px]">12</span>
+</button>
+<button class="flex-1 py-2 px-1 rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1 transition-all" id="tab-setores" type="button">
+<span class="truncate">Setores</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">34</span>
+</button>
+<button class="flex-1 py-2 px-1 rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1 transition-all" id="tab-produtos" type="button">
+<span class="truncate">Produtos</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">185</span>
+</button>
+</div>
+<!-- Barra de Busca Rápida & Filtros -->
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-xl shadow-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-low transition-colors" placeholder="Buscar entidade cadastrada..." type="text"/>
+</div>
+<button aria-label="Filtro avançado" class="h-11 w-11 flex-shrink-0 flex items-center justify-center rounded-xl bg-surface-container-lowest text-on-surface-variant shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Botão de Ação Primária -->
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-all" id="toggle-new-modal-btn" type="button">
+<span class="material-symbols-outlined text-[22px]">domain_add</span>
+<span>Nova Entidade</span>
+</button>
+<!-- Card Expansivo / Form Inline de Demonstração SQLite -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md space-y-space-md transition-all" id="inline-create-card">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-secondary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">add_business</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">Cadastrar Nova Entidade</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Armazenamento local SQLite offline-ready</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] uppercase">Rascunho</span>
+</div>
+<form class="space-y-3" onsubmit="event.preventDefault();">
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface">Nome da Entidade / Instituição <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full h-11 px-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container transition-all" type="text" value="Secretaria Municipal de Obras e Serviços"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-tertiary-fixed-dim text-[18px]">check_circle</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface">CNPJ ou Código</label>
+<input class="w-full h-11 px-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container transition-all" type="text" value="14.283.910/0004-98"/>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface">Tipo / Regime</label>
+<select class="w-full h-11 px-3 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container appearance-none transition-all">
+<option>Administração Direta</option>
+<option>Autarquia</option>
+<option>Fundo Municipal</option>
+</select>
+</div>
+</div>
+<div class="space-y-1">
+<label class="block font-label-md text-label-md text-on-surface">Observações de Tombamento</label>
+<textarea class="w-full p-2.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg focus:outline-none focus:bg-surface-container resize-none transition-all" placeholder="Ex: Centraliza galpões logísticos e máquinas pesadas..." rows="2">Vinculada aos galpões de infraestrutura viária e frota municipal.</textarea>
+</div>
+<div class="flex items-center justify-end gap-2 pt-1">
+<button class="px-4 h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" id="btn-cancel-create" type="button">
+          Cancelar
+        </button>
+<button class="px-4 h-10 rounded-lg bg-tertiary-container text-tertiary-fixed font-label-md text-label-md shadow-sm flex items-center gap-1.5 active:scale-95 transition-transform" id="btn-save-sqlite" type="submit">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Salvar no SQLite</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Indicador de Status dos Registros -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">apartment</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Entidades Registradas</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 de 12 exibidas</span>
+</div>
+<!-- Lista de Itens Cadastrados -->
+<div class="space-y-space-sm">
+<!-- Card 1: Prefeitura Municipal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex-shrink-0 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight truncate">Prefeitura Municipal - Sede Principal</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">CNPJ 14.283.910/0001-44</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" title="Editar" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors" title="Opções" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+          18 Setores ativos
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">inventory</span>
+          842 Lançamentos
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>
+          Matriz
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+          Praça dos Três Poderes, 100 - Centro
+        </span>
+<span class="text-primary font-label-sm">Tombamento Ativo</span>
+</div>
+</div>
+<!-- Card 2: Hospital Regional Dr. Silva -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-highest flex-shrink-0 flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">local_hospital</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight truncate">Hospital Regional Dr. Silva</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">CNPJ 14.283.910/0002-25</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" title="Editar" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-error flex items-center justify-center hover:bg-error-container transition-colors" title="Excluir" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+          9 Setores
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">inventory</span>
+          415 Lançamentos
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">emergency</span>
+          Saúde
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+          Av. da Saúde, 500 - Setor Norte
+        </span>
+<span class="text-on-surface-variant font-label-sm">Sincronizado</span>
+</div>
+</div>
+<!-- Card 3: SME -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-low flex-shrink-0 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight truncate">Secretaria Municipal de Educação (SME)</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">CNPJ 14.283.910/0003-06</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" title="Editar" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-error flex items-center justify-center hover:bg-error-container transition-colors" title="Excluir" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+          14 Setores
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">inventory</span>
+          225 Lançamentos
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+          Educação
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+          Rua Tiradentes, 88 - Bairro Imperial
+        </span>
+<span class="text-on-surface-variant font-label-sm">Sincronizado</span>
+</div>
+</div>
+<!-- Card 4: Fundação Cultural -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow flex flex-col space-y-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex-shrink-0 flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">museum</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-headline-sm text-headline-sm text-primary leading-tight truncate">Fundação Cultural e Museu Histórico</h2>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Órgão Vinculado • Patrimônio Cultural</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-primary flex items-center justify-center hover:bg-surface-container transition-colors" title="Editar" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors" title="Opções" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">meeting_room</span>
+          4 Setores
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">inventory</span>
+          88 Lançamentos
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          Auditado
+        </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant pt-1 font-body-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+          Alameda dos Cravos, 12 - Casarão Velho
+        </span>
+<span class="text-tertiary-container font-label-sm">Totalmente Conferido</span>
+</div>
+</div>
+</div>
+<!-- Ações de Backup & Exportação Rápida Local -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Base de Dados Atualizada</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Último backup: Hoje, 14:32</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm active:scale-95 transition-transform flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Exportar</span>
+</button>
+</div>
+</div>
+<script>
+  // Script para controle interativo de Abas e expansão do formulário
+  document.addEventListener('DOMContentLoaded', function() {
+    // Destacar item "Cadastros" na navegação inferior global
+    const navCadastros = document.querySelector('nav a[data-path="cadastros"]');
+    if (navCadastros) {
+      navCadastros.classList.remove('text-on-surface-variant');
+      navCadastros.classList.add('text-secondary', 'font-semibold');
+      const icon = navCadastros.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+      }
+    }
+
+    // Toggle simples para o formulário de cadastro rápido
+    const toggleBtn = document.getElementById('toggle-new-modal-btn');
+    const formCard = document.getElementById('inline-create-card');
+    const cancelBtn = document.getElementById('btn-cancel-create');
+    const saveBtn = document.getElementById('btn-save-sqlite');
+
+    if (toggleBtn && formCard) {
+      toggleBtn.addEventListener('click', function() {
+        formCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        formCard.classList.add('scale-[1.01]');
+        setTimeout(() => formCard.classList.remove('scale-[1.01]'), 200);
+      });
+    }
+
+    if (cancelBtn && formCard) {
+      cancelBtn.addEventListener('click', function() {
+        formCard.classList.add('opacity-50');
+        setTimeout(() => formCard.classList.remove('opacity-50'), 200);
+      });
+    }
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function() {
+        const originalText = saveBtn.innerHTML;
+        saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Gravando...</span>';
+        setTimeout(() => {
+          saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span><span>Salvo!</span>';
+          setTimeout(() => {
+            saveBtn.innerHTML = originalText;
+          }, 1500);
+        }, 600);
+      });
+    }
+
+    // Alternar tabs
+    const tabs = [
+      { btn: document.getElementById('tab-entidades'), active: true },
+      { btn: document.getElementById('tab-setores'), active: false },
+      { btn: document.getElementById('tab-produtos'), active: false }
+    ];
+
+    tabs.forEach(t => {
+      if (!t.btn) return;
+      t.btn.addEventListener('click', function() {
+        tabs.forEach(item => {
+          if (!item.btn) return;
+          item.btn.className = "flex-1 py-2 px-1 rounded-lg text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center justify-center gap-1 transition-all";
+          const badge = item.btn.querySelector('span:last-child');
+          if (badge) {
+            badge.className = "px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]";
+          }
+        });
+
+        this.className = "flex-1 py-2 px-1 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1 transition-all";
+        const thisBadge = this.querySelector('span:last-child');
+        if (thisBadge) {
+          thisBadge.className = "px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px]";
+        }
+      });
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-secondary"><div class="relative flex items-center justify-around h-20 px-space-xs max-w-lg mx-auto"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">space_dashboard</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="lancamentos" href="#"><span class="material-symbols-outlined text-[22px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5">Lançamentos</span></a><div class="relative -top-5 flex flex-col items-center"><a class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-[0_8px_16px_rgba(0,35,111,0.3)] active:scale-95 transition-transform hover:bg-primary" data-path="novo-item" href="#"><span class="material-symbols-outlined text-[28px]">add</span></a><span class="font-label-sm text-label-sm text-primary font-semibold mt-1">Novo</span></div><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="cadastros" href="#"><span class="material-symbols-outlined text-[22px]">domain</span><span class="font-label-sm text-label-sm mt-0.5">Cadastros</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant transition-colors" data-path="exportar-relatorios" href="#"><span class="material-symbols-outlined text-[22px]">ios_share</span><span class="font-label-sm text-label-sm mt-0.5">Exportar</span></a></div></nav></body></html>

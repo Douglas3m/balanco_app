@@ -1,0 +1,52 @@
+name: balanco
+description: "Sistema Balanço de Catalogação Patrimonial e Emissão A4."
+version: 2.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Banco de Dados SQLite Local com ACID
+  sqflite: ^2.3.0
+  sqflite_common_ffi: ^2.3.0
+  path_provider: ^2.1.1
+  path: ^1.8.3
+
+  # Câmera e Captura de Fotos no Mobile
+  camera: ^0.10.5+9
+  image_picker: ^1.0.4
+  file_picker: ^6.1.1
+
+  # Servidor HTTP Local para Modo Câmera Remota (Mobile)
+  shelf: ^1.4.1
+  shelf_router: ^1.1.4
+
+  # Cliente HTTP Desktop para Câmera Remota e Ponte com Motor PDF
+  http: ^1.2.0
+
+  # Planilhas, Acervos e Auditoria
+  csv: ^5.1.1
+  archive: ^3.4.9
+  crypto: ^3.0.3
+
+  # Formatação e Design System Stitch
+  intl: ^0.18.1
+  google_fonts: ^6.1.0
+
+  # Visualizador de PDF e Impressão
+  pdf: ^3.10.7
+  printing: ^5.11.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
